@@ -1,0 +1,160 @@
+<html>
+   <head>
+      <title>Caesar dan Vigenere Cipher</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   </head>
+   <body>
+
+         <nav class="nav-extended black">
+            <div class="nav-content">
+               <ul class="tabs tabs-transparent tabs-fixed-width">
+                  <li class="tab"><a class="active" href="#caesar">Caesar Cipher</a></li>
+                  <li class="tab"><a href="#vigenere">Vigenere Cipher</a></li>
+                  <li class="tab"><a href="#about">about</a></li>
+               </ul>
+            </div>
+         </nav>
+         
+         <br>
+         <!--CAESAR CIPHER-->
+         <div id="caesar">
+            <div class="container">
+               <form class="col s12" method="get" onsubmit="return false">
+                     
+                  <div class="row">
+                      
+                     <h4 class="black-text center">CAESAR CIPHER</h4>
+                     <div class="divider"></div>
+                  </div>
+
+                  <div class='row'>
+                      <div class="col s4 m2 l2">
+                          <h5>Plain Text</h5>
+                      </div>
+                     <div class='input-field col s8 m10 l10'>
+                        <textarea id="cPlain" class="materialize-textarea"></textarea>
+                     </div>
+                  </div>
+         
+                  <div class='row'>
+                      <div class="col s4 m 2 l2">
+                          <h5>Key</h5>
+                      </div>
+                     <div class='input-field col s8 m10 l10'>
+                        <input class='validate' type='text' id='cKey' />
+                     </div>
+                  </div>
+
+                    <div class='row'>
+                        <div class="col s4 m 2 l2">
+                            <h5>Chiper Text</h5>
+                        </div>
+                      <div class='input-field col s8 m10 l10'>
+                        <textarea id="cCipher" class="materialize-textarea"></textarea>
+                        <button type="reset" class="btn btn-floating btn-flat right white waves-effect waves-grey" title="Reset"><i class="material-icons grey-text" title="">refresh</i></button>
+                        <button class="btn btn-floating btn-flat right white waves-effect waves-grey" title="Copy" onclick="fCCopy()"><i class="material-icons grey-text" title="">content_copy</i></button>
+                        <div id="copyCAlert" class="chip right white"></div>
+                      </div>
+                    </div>
+
+                  <div class='row'>
+                     <div class="col s6">
+                        <button type='button' class='col s12 waves-effect waves-light btn-large blue darken-3' onclick="doCaesar(true)">Encrypt</button>
+                     </div>
+                     <div class="col s6">
+                        <button type='button' class='col s12 waves-effect waves-light btn-large amber darken-4' onclick="doCaesar(false)">Decrypt</button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+         <!--CAESAR CIPHER-->
+
+         
+         <!--VIGENERE CIPHER-->
+         <div id="vigenere">
+            <div class="container">
+               <form class="col s12" method="get" onsubmit="return false">
+                     
+                  <div class="row">
+                      
+                     <h4 class="black-text center">VIGENERE CIPHER</h4>
+                     <div class="divider"></div>
+                  </div>
+
+                  <div class='row'>
+                      <div class="col s4 m2 l2">
+                          <h5>Plain Text</h5>
+                      </div>
+                     <div class='input-field col s8 m10 l10'>
+                        <textarea id="vPlain" class="materialize-textarea"></textarea>
+                     </div>
+                  </div>
+         
+                  <div class='row'>
+                      <div class="col s4 m 2 l2">
+                          <h5>Key</h5>
+                      </div>
+                     <div class='input-field col s8 m10 l10'>
+                        <input class='validate' type='text' id='vKey' />
+                     </div>
+                  </div>
+
+                    <div class='row'>
+                        <div class="col s4 m 2 l2">
+                            <h5>Chiper Text</h5>
+                        </div>
+                      <div class='input-field col s8 m10 l10'>
+                        <textarea id="vCipher" class="materialize-textarea"></textarea>
+                        <button type="reset" class="btn btn-floating btn-flat right white waves-effect waves-grey" title="Reset"><i class="material-icons grey-text" title="">refresh</i></button>
+                        <button class="btn btn-floating btn-flat right white waves-effect waves-grey" title="Copy" onclick="fVCopy()"><i class="material-icons grey-text" title="">content_copy</i></button>
+                        <div id="copyVAlert" class="chip right white"></div>
+                      </div>
+                    </div>
+
+                  <div class='row'>
+                     <div class="col s6">
+                        <button type='button' class='col s12 waves-effect waves-light btn-large blue darken-3' onclick="doVigenere(true)">Encrypt</button>
+                     </div>
+                     <div class="col s6">
+                        <button type='button' class='col s12 waves-effect waves-light btn-large amber darken-4' onclick="doVigenere(false)">Decrypt</button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+         <!--VIGENERE CIPHER-->
+        
+        
+         <div id="about" class="container">
+                <div class="row">
+                      <div class="col l2 m2"></div>
+                   <div class="col l8 m8 s12">
+                      <div class="card">
+                            <div class="card-content">
+                                  <h5 class="black-text">APLIKASI DEKRIPSI DAN ENKRIPSI DENGAN CAESAR CIPHER DAN VIGENERE CIPHER</h5>
+                                  <p class="black-text text-lighten-4">Aplikasi berbasis web ini dibuat menggunakan Javascript dan bertujuan untuk memenuhi tugas UTS semester ganjil mata kuliah Network Security (AB153).</p>
+                            </div>
+                            <div class="card-content grey lighten-4">
+                                  <h5 class="black-text center">Kelompok 3</h5>
+                                  <ol>
+                                  <li>I KETUT SURYA WIGUNA (150030122)</li>
+                                  <li>I PUTU ADITYA PRADANA (150030148)</li>
+                                  <li>I GUSTI NGURAH BAGUS MAHENDRA DWIPAYANA (150030129)</li>
+                                  <li>I KETUT ADITYA HERDINATA PUTRA (150030373)</li>
+                                  <li>I GEDE REDI KUSUMA (150030159)</li>
+                                  </ol>
+                            </div>
+                      </div>
+                   </div>
+                </div>
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/caesar.js"></script>
+      <script type="text/javascript" src="js/vigenere.js"></script>
+      <script type="text/javascript" src="js/copy.js"></script>
+   </body>
+</html>
